@@ -1,0 +1,10 @@
+<app-filtration-section [tasks]="tasks" (filterTasks)="setFilteredTasks($event)"/>
+<div role="list" class="task-grid">
+  <div class="task-grid-header">
+    <div class="header-item" (click)="sortTasks('status')">Status</div>
+    <div class="header-item">Title</div>
+    <div class="header-item" (click)="sortTasks('assignees')">Assignees</div>
+    <div class="header-item" (click)="sortTasks('deadline')">Deadline</div>
+    <div class="header-item">Priority</div>
+  </div>
+  <app-task-card *ngFor="let task of filteredTasks" class="task-card-container" [task]="task" [team]="team"/>

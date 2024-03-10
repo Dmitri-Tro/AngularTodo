@@ -1,0 +1,35 @@
+<div *ngIf="task" class="task-container">
+  <div class="task-info">
+    <app-editable-span [text]="task.title" (updateText)="updateTaskTitle($event)" class="task-title"/>
+    <div class="task-container-item">
+      <span class="item-title">Assigners: </span>
+      <app-custom-select [options]="teamOptions"
+                         [selectedValue]="task.assignees"
+                         [isMultiple]="true"
+                         (updatedValue)="updateTaskAssigners($event)"
+      />
+    </div>
+    <div class="task-container-item">
+      <span class="item-title">Deadline: </span>
+      <app-datepicker [inputDate]="task.deadline" (updateDate)="updateTaskDeadline($event)"/>
+    </div>
+    <div class="task-container-item">
+      <span class="item-title">Priority: </span>
+      <app-custom-select [options]="taskPriorityOptions"
+                         [selectedValue]="task.priority"
+                         (updatedValue)="updateTaskPriority($event)"
+      />
+    </div>
+    <div class="task-container-item">
+      <span class="item-title">Status: </span>
+      <app-custom-select [options]="taskStatusOptions"
+                         [selectedValue]="task.status"
+                         (updatedValue)="updateTaskStatus($event)"
+      />
+    </div>
+  </div>
+  <div class="task-description">
+    <span class="description-title">More about task: </span>
+    <app-editable-span class="description-text" [text]="task.description || 'Add description...'" (updateText)="updateTaskDescription($event)"/>
+  </div>
+</div>

@@ -1,0 +1,30 @@
+.filter-container {
+  width: 25%;
+margin-bottom: 50px;
+
+  button {
+    background-color: #455EEAFF;
+    color: #f6f5f5;
+    font-size: 14px;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 30px;
+    margin: 10px;
+  }
+
+  .filter-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .filter-label {
+      font-size: 18px;
+    }
+  }
+
+  .filter-item > input {
+    width: 60%;
+  }
+}
+
+

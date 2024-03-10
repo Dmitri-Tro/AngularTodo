@@ -1,0 +1,19 @@
+.task-card-item {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  font-size: 18px;
+  align-items: center;
+  text-align: center;
+cursor: pointer;
+
+  button {
+    background-color: #455EEAFF;
+    color: #f6f5f5;
+    font-size: 14px;
+    border: none;
+    border-radius: 5px;
+    width: 150px;
+    padding: 10px 30px;
+    margin: 10px;
+  }
+}

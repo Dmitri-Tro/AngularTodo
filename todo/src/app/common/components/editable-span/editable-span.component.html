@@ -1,0 +1,2 @@
+<span *ngIf="!isEditMode" (click)="setEditMode(true)">{{ text }} </span>
+<input *ngIf="isEditMode" (blur)="setNewText(text)" (keyup.enter)="setNewText(text)" (keyup.escape)="setEditMode(false)" [(ngModel)]="text" />

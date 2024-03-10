@@ -1,0 +1,8 @@
+<div class="app-container">
+  <div class="add-task-container">
+    <input [(ngModel)]="text" #addTaskInput/>
+    <button (click)="addTask(addTaskInput.value)">Add task</button>
+  </div>
+  <app-task-list-area [tasks]="tasks$ | async" [team]="team$ | async" />
+  <h2 *ngIf="!(tasks$ | async)">You have no tasks!</h2>
+</div>

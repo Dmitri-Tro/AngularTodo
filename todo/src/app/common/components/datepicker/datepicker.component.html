@@ -1,0 +1,10 @@
+<mat-form-field>
+  <input matInput
+         [value]="date"
+         [matDatepicker]="picker"
+         (dateChange)="onDateChange($event)"
+         (blur)=applyDate()
+  />
+  <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+  <mat-datepicker #picker [startAt]="date" (closed)=applyDate() ></mat-datepicker>
+</mat-form-field>

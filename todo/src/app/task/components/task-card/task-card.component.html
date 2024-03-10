@@ -1,0 +1,20 @@
+<li class="task-card-item" *ngIf="task" (dblclick)="showTaskPage(task.id)">
+  <app-custom-select class="task-card-status" [options]="taskStatusOptions"
+                     [selectedValue]="task.status"
+                     (updatedValue)="updateTaskStatus($event)"
+  />
+  <app-editable-span class="task-card-title" [text]="task.title" (updateText)="updateTaskTitle($event)"/>
+  <app-custom-select class="task-card-assigners"
+                     [options]="teamOptions"
+                     [selectedValue]="task.assignees"
+                     [isMultiple]="true"
+                     (updatedValue)="updateTaskAssigners($event)"
+  />
+  <app-datepicker class="task-card-deadline" [inputDate]="task.deadline" (updateDate)="updateTaskDeadline($event)"/>
+  <app-custom-select class="task-card-priority"
+                     [options]="taskPriorityOptions"
+                     [selectedValue]="task.priority"
+                     (updatedValue)="updateTaskPriority($event)"
+  />
+  <button (click)="deleteTask()">Delete task</button>
+</li>

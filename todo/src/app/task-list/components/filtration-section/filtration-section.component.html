@@ -1,0 +1,20 @@
+<div class="filter-container">
+  <div class="filter-item">
+    <label class="filter-label">Filter by status:</label>
+    <app-custom-select [options]="filterByStatusOptions" [selectedValue]="'All'" (updatedValue)="setStatusFilter($event[0])"/>
+  </div>
+
+  <div class="filter-item">
+    <label class="filter-label">Filter by assigners:</label>
+    <input [(ngModel)]="filterAssignee" />
+  </div>
+
+  <div class="filter-item">
+    <label class="filter-label">Filter by deadline:</label>
+    <app-datepicker [inputDate]="undefined" (updateDate)="setDeadlineFilter($event)"/>
+  </div>
+  <div class="btn-container">
+    <button (click)="applyFilters()">Apply Filters</button>
+    <button (click)="resetFilters()">Reset Filters</button>
+  </div>
+</div>
